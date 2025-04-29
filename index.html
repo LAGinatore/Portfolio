@@ -14,7 +14,10 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <ul class="navbar-list">
+                <button class="nav-toggle" onclick="Navbar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="navbar-list" id="navbar-list">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#experience">EXPERIENCE</a></li>
                     <li><a href="#projects">PROJECTS</a></li>
@@ -62,6 +65,7 @@
             <button onclick="info('dec2')">View info</button>
             <p id="dec2" class="hidden">This project was built to practice creating forms and handling layout with basic HTML/CSS. It includes input fields, validation, and styled lists.</p>
         </div>
+
         <div class="projects">
         <a href="https://laginatore.github.io/CSS-Box-Modele/" target="_blank" class="project-link">
             <img src="CSS%20BOX%20MODELE.png">

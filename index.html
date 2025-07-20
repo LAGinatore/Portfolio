@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <meta name="description" content="Portfolio of Mounis Karim Elghali - Full-stack Software Engineer">
+    <meta name="keywords" content="portfolio, web developer, full-stack, software engineer, HTML, CSS, JavaScript">
+    <meta name="author" content="Mounis Karim Elghali">
+    <title>Mounis Karim Elghali - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,79 +14,164 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="container">
-                <button class="nav-toggle" onclick="Navbar()">
-                    <i class="fas fa-bars"></i>
+                <button 
+                    class="nav-toggle" 
+                    onclick="toggleNavbar()"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navbar-list"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="sr-only">Menu</span>
                 </button>
-                <ul class="navbar-list" id="navbar-list">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#experience">EXPERIENCE</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                <ul class="navbar-list" id="navbar-list" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem" tabindex="0">HOME</a></li>
+                    <li role="none"><a href="#experience" role="menuitem">EXPERIENCE</a></li>
+                    <li role="none"><a href="#projects" role="menuitem">PROJECTS</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">CONTACT</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="wrapper">
-            <img src="photo_2025-04-24_16-06-52.png" alt="my photo" class="photo">
-        <div class="info">
-            <h1>I do code and</h1>
-            <h1>I <span class="highlight">enjoy it!</span></h1>
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-label="Hero introduction">
+            <div class="wrapper">
+                <img src="photo_2025-04-24_16-06-52.png" alt="Portrait of Mounis Karim Elghali" class="photo">
+                <div class="info">
+                    <h1>I do code and</h1>
+                    <h1>I <span class="highlight">enjoy it!</span></h1>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </div>
-    <section id="home">
-        <article>
-            <h2>My name is Mounis Karim Elghali</h2>
-            <p>I am a motivated university student and aspiring full-stack software engineer with a strong interest in web development and software design. As a beginner programmer, I am actively building my skills in both front-end and back-end technologies, including HTML, CSS, JavaScript, and exploring frameworks like React and Node.js. I am passionate about creating impactful digital solutions and continuously seek opportunities to grow, learn, and contribute to real-world projects.</p>        </article>
-    </section>
-    <section id="experience">
-        <h4>EXPERIENCE WITH</h4>
-        <img src="javascript.png">
-        <img src="css.png">
-        <img src="html.png">
-    </section>
-        <h2 class="projectsh2">PROJECTS</h2>
-    <section id="projects">
-        <div class="projects">
-    <a href="https://laginatore.github.io/Gallery/" target="_blank" class="project-link">
-            <img src="Photo%20Gallery.png">
-            <p>Click to show</p>
-            <h3>Photo Gallery</h3>
-    </a>
-            <button onclick="info('dec1')">View info</button>
-            <p id="dec1" class="hidden">The gallery displays images in a grid layout with hover effects. It adapts to screen sizes using media queries.</p>
-        </div>
-        <div class="projects">
-        <a href="https://laginatore.github.io/Rejistration-form/" target="_blank" class="project-link">
-            <img src="Inscription%20Workshop.png">
-            <p>Click to show</p>
-            <h3>Rejistration form</h3>
-        </a>
-            <button onclick="info('dec2')">View info</button>
-            <p id="dec2" class="hidden">This project was built to practice creating forms and handling layout with basic HTML/CSS. It includes input fields, validation, and styled lists.</p>
-        </div>
+        <!-- About Section -->
+        <section id="home" aria-labelledby="about-heading">
+            <article>
+                <h2 id="about-heading">My name is Mounis Karim Elghali</h2>
+                <p>I am a motivated university student and aspiring full-stack software engineer with a strong interest in web development and software design. As a beginner programmer, I am actively building my skills in both front-end and back-end technologies, including HTML, CSS, JavaScript, and exploring frameworks like React and Node.js. I am passionate about creating impactful digital solutions and continuously seek opportunities to grow, learn, and contribute to real-world projects.</p>
+            </article>
+        </section>
+        <!-- Experience Section -->
+        <section id="experience" aria-labelledby="experience-heading">
+            <h2 id="experience-heading">EXPERIENCE WITH</h2>
+            <div class="tech-icons" role="list" aria-label="Technologies I work with">
+                <div role="listitem">
+                    <img src="javascript.png" alt="JavaScript" loading="lazy">
+                </div>
+                <div role="listitem">
+                    <img src="css.png" alt="CSS" loading="lazy">
+                </div>
+                <div role="listitem">
+                    <img src="html.png" alt="HTML" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-        <div class="projects">
-        <a href="https://laginatore.github.io/CSS-Box-Modele/" target="_blank" class="project-link">
-            <img src="CSS%20BOX%20MODELE.png">
-            <p>Click to show</p>
-            <h3>CSS Box Modele</h3>
-        </a>
-            <button onclick="info('dec3')">View info</button>
-            <p id="dec3" class="hidden">A Simple CSS box modele</p>
+        <!-- Projects Section -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="projects-title">PROJECTS</h2>
+            <div class="projects-container" role="list" aria-label="My portfolio projects">
+                
+                <article class="project-card" role="listitem">
+                    <a href="https://laginatore.github.io/Gallery/" target="_blank" class="project-link" aria-describedby="project1-desc">
+                        <img src="Photo%20Gallery.png" alt="Screenshot of Photo Gallery project" loading="lazy">
+                        <div class="project-content">
+                            <p>Click to show</p>
+                            <h3>Photo Gallery</h3>
+                        </div>
+                    </a>
+                    <button 
+                        onclick="toggleProjectInfo('desc1')" 
+                        aria-expanded="false"
+                        aria-controls="desc1"
+                        aria-label="View project details for Photo Gallery"
+                        class="info-btn"
+                    >
+                        View info
+                    </button>
+                    <p id="desc1" class="project-description hidden" role="region" aria-label="Project description">
+                        The gallery displays images in a grid layout with hover effects. It adapts to screen sizes using media queries.
+                    </p>
+                </article>
+
+                <article class="project-card" role="listitem">
+                    <a href="https://laginatore.github.io/Rejistration-form/" target="_blank" class="project-link" aria-describedby="project2-desc">
+                        <img src="Inscription%20Workshop.png" alt="Screenshot of Registration form project" loading="lazy">
+                        <div class="project-content">
+                            <p>Click to show</p>
+                            <h3>Registration form</h3>
+                        </div>
+                    </a>
+                    <button 
+                        onclick="toggleProjectInfo('desc2')" 
+                        aria-expanded="false"
+                        aria-controls="desc2"
+                        aria-label="View project details for Registration form"
+                        class="info-btn"
+                    >
+                        View info
+                    </button>
+                    <p id="desc2" class="project-description hidden" role="region" aria-label="Project description">
+                        This project was built to practice creating forms and handling layout with basic HTML/CSS. It includes input fields, validation, and styled lists.
+                    </p>
+                </article>
+
+                <article class="project-card" role="listitem">
+                    <a href="https://laginatore.github.io/CSS-Box-Modele/" target="_blank" class="project-link" aria-describedby="project3-desc">
+                        <img src="CSS%20BOX%20MODELE.png" alt="Screenshot of CSS Box Model project" loading="lazy">
+                        <div class="project-content">
+                            <p>Click to show</p>
+                            <h3>CSS Box Model</h3>
+                        </div>
+                    </a>
+                    <button 
+                        onclick="toggleProjectInfo('desc3')" 
+                        aria-expanded="false"
+                        aria-controls="desc3"
+                        aria-label="View project details for CSS Box Model"
+                        class="info-btn"
+                    >
+                        View info
+                    </button>
+                    <p id="desc3" class="project-description hidden" role="region" aria-label="Project description">
+                        A demonstration of CSS box model concepts with visual examples and interactive elements.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- Contact Footer -->
+    <footer id="contact" role="contentinfo" aria-labelledby="contact-heading">
+        <div class="footer-content">
+            <h2 id="contact-heading">Contact</h2>
+            <div class="contact-info">
+                <p aria-label="Email address">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:elfahde01@gmail.com">elfahde01@gmail.com</a>
+                </p>
+                <div class="social-links" role="list" aria-label="Social media links">
+                    <a href="https://github.com/LAGinatore" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Visit my GitHub profile">
+                        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/mouniss.ben?igsh=MThoeHg5NWZrY2ZtaQ==" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Visit my Instagram profile">
+                        <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </div>
+            </div>
         </div>
-    </section>
-<footer id="contact">
-    <h2>Contact</h2>
-    <p><i class="fa-regular fa-envelope"></i>elfahde01@gmail.com</p>
-
-<a href="https://github.com/LAGinatore" target="_blank"><i class="fab fa-github fa-2x"></i> </a>
-    <a href="https://www.instagram.com/mouniss.ben?igsh=MThoeHg5NWZrY2ZtaQ==" target="_blank"><i class="fab fa-instagram fa-2x"></i> </a>
-
-</footer>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
